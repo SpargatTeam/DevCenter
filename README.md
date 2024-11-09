@@ -9,3 +9,7 @@
 ## Support us
 
 ### If you want support our project you can star it and buy Normal Tier on Patreon for 1 dollar
+
+## Limits
+
+### In our DevCenter, you can create more maven centers in one! like maven/center1 maven/center2, git/private git/public, files/oversea files/shared
