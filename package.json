@@ -1,0 +1,16 @@
+{
+  "name": "devcenter",
+  "version": "1.0.0",
+  "author": "Spargat Team",
+  "license": "SPARGAT",
+  "description": "DevCenter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "axios": "latest",
+    "https": "latest"
+  }
+}
