@@ -5,16 +5,12 @@
     "name": "Comical",
     "hasPassword": true,
     "password": "iPro123",
-    "role": 6,
-    "friends": [
-      2,
-      3
-    ]
+    "role": 6
   },
   {
     "id": 2,
     "accessToken": "tokenaro-Epd4phKFGgjF0uT0iCYVf5ghT5rsl2D7QKryGBDB",
-    "name": "AnatineSquire40",
+    "name": "Figaro",
     "hasPassword": true,
     "password": "123456",
     "role": 6
@@ -26,14 +22,5 @@
     "hasPassword": true,
     "password": "123456",
     "role": 6
-  },
-  {
-    "id": 4,
-    "accessToken": "tokenaro-8PRhIT0B0Tq3iroUplBE2u2S4Rm57zlsMQVXh0c3",
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "hasPassword": true,
-    "password": "securepassword123",
-    "role": 1
   }
 ]

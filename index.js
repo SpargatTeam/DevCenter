@@ -1,6 +1,8 @@
 const express = require('express');
+const mustache = require('mustache');
 const fs = require('fs');
 const path = require('path');
+const { customLog } = require('./logger.js');
 require('dotenv').config();
 const app = express();
 const whitelist = JSON.parse(fs.readFileSync('storage/db/whitelist.json', 'utf-8'));
@@ -11,7 +13,6 @@ const checkWhitelist = (req, res, next) => {
         next();
     } else {
         const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-
         if (whitelist.includes(clientIP)) {
             next();
         } else {
@@ -25,17 +26,6 @@ const checkWhitelist = (req, res, next) => {
     }
 };
 
-const logToFile = (message) => {
-    const logFilePath = path.join(__dirname, 'server.log');
-    const timestamp = new Date().toISOString();
-    fs.appendFileSync(logFilePath, `${timestamp} - ${message}\n`);
-};
-
-const customLog = (message) => {
-    console.log(message);
-    logToFile(message);
-};
-
 app.use(checkWhitelist);
 
 app.use((req, res) => {
@@ -46,12 +36,14 @@ app.use((req, res) => {
             console.error(err);
             res.status(404).send('404 Not Found');
         } else {
-            res.status(404).send(data);
+            const rendered = mustache.render(data, { location: req.originalUrl });
+            res.status(404).send(rendered);
         }
     });
 });
 
-const PORT = 80;
+const PORT = process.env.WEB_PORT;
 app.listen(PORT, () => {
     customLog(`HTTP server is running on port ${PORT}`);
+    customLog(`http://localhost:${PORT}`);
 });

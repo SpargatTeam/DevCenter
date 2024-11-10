@@ -12,6 +12,7 @@
     "express": "latest",
     "axios": "latest",
     "https": "latest",
-    "dotenv": "latest"
+    "dotenv": "latest",
+    "mustache": "latest"
   }
 }
