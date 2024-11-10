@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "latest",
     "axios": "latest",
-    "https": "latest"
+    "https": "latest",
+    "dotenv": "latest"
   }
 }

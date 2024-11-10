@@ -1,30 +1,24 @@
 #!/bin/bash
 
-# Nume proiect
-project_name="devcenter"
-
-# Opțiuni de build
+project_name="DevCenter"
 run="node index.js"
 build="npm install"
 
-# Afișarea meniului de opțiuni
 echo "============================================="
-echo "Proiect: $project_name"
+echo "Project: $project_name"
 echo "============================================="
-echo "Selectează o opțiune:"
-echo "1. Run (rulare aplicație JS)"
-echo "2. Build (construire executabil JS)"
+echo "Choice an option:"
+echo "1. Run (DevCenter)"
+echo "2. Install (depencies)"
 
-# Citirea alegerii utilizatorului
-read -p "Introdu numărul opțiunii tale: " choice
+read -p "Run option: " choice
 
-# Executarea opțiunii selectate
 if [ "$choice" == "1" ]; then
-    echo "Rulăm aplicația JS..."
+    echo "Running DevCenter..."
     $run
 elif [ "$choice" == "2" ]; then
-    echo "Instalăm dependentele JS..."
+    echo "Installing depencies..."
     $build
 else
-    echo "Alegere invalidă. Te rog să încerci din nou."
+    echo "Invalid option"
 fi

@@ -1,33 +1,27 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Nume proiect
-set "project_name=devcenter"
-
-REM Opțiuni de build
+set "project_name=DevCenter"
 set "run=node index.js"
 set "build=npm install"
 
-REM Afișarea meniului de opțiuni
 echo =============================================
-echo Proiect: %project_name%
+echo Project: %project_name%
 echo =============================================
-echo Selectează o opțiune:
-echo 1. Run (rulare aplicație JS)
-echo 2. Build (construire executabil JS)
+echo Choice an option:
+echo 1. Run (DevCenter)
+echo 2. Install (depencies)
 
-REM Citirea alegerii utilizatorului
-set /p choice=Introdu numărul opțiunii tale: 
+set /p choice=Run option:
 
-REM Executarea opțiunii selectate
 if "%choice%"=="1" (
-    echo Rulăm aplicația JS...
+    echo Running DevCenter...
     %run%
 ) else if "%choice%"=="2" (
-    echo Instalam dependentele JS...
+    echo Installing depencies...
     %build%
 ) else (
-    echo Alegere invalidă. Te rog să încerci din nou.
+    echo Invalid option
 )
 
 endlocal
