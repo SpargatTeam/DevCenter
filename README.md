@@ -26,6 +26,10 @@
 
 ### In our DevCenter, you can create more maven centers in one! like maven/center1 maven/center2, git/private git/public, files/oversea files/shared, pip/central1 pip/central2, and it can continue
 
+## TODO
+
+### Edit settings for how you need in .env
+
 ## Build instrctions (Linux)
 
 ### If you are Windows run build.bat and select option 2 for install depencies
