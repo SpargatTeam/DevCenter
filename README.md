@@ -16,7 +16,11 @@
   
 ## Support us
 
-### If you want support our project you can star it and buy Normal Tier on Patreon for 1 dollar
+### If you want support our project you can star it and buy Normal Tier on Patreon with 2 dollar
+
+<a href="https://patreon.com/Spargat" target="_blank">
+  <img src="https://img.shields.io/badge/Support-Patreon-orange.svg" alt="Patreon">
+</a>
 
 ## Limits
 
