@@ -3,6 +3,7 @@ const mustache = require('mustache');
 const fs = require('fs');
 const path = require('path');
 const { customLog } = require('./logger.js');
+const { createFolderLogic } = require('./storage/static/create.js');
 require('dotenv').config();
 const routers = require('./app/api/router.js');
 const app = express();
@@ -28,6 +29,9 @@ const checkWhitelist = (req, res, next) => {
 
 app.use(checkWhitelist);
 app.use(express.json());
+app.use('/shared/', express.static(path.join(__dirname, 'storage', 'static', 'storage')));
+app.post('/create/shared/', createFolderLogic);
+app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
 app.use('/api/v1/', routers);
 app.use((req, res) => {
     customLog(`404 Not Found: ${req.originalUrl}`);
