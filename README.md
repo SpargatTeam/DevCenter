@@ -26,7 +26,12 @@
 
 ### In our DevCenter, you can create more maven centers in one! like maven/center1 maven/center2, git/private git/public, files/oversea files/shared, pip/central1 pip/central2, and it can continue
 
-## Build instrctions
+## Build instrctions (Linux)
 
-### If you are Windows run build.bat and select option 2
-### If you're Linux run build.sh and select option 2
+### If you are Windows run build.bat and select option 2 for install depencies
+### Run build.bat and select 1 to build server, it will be runned on port 80
+
+## Build instrctions (Windows)
+
+### If you're Linux run build.sh and select option 2 for install depencies
+### Run build.sh and select 1 to build server, it will be runned on port 80
