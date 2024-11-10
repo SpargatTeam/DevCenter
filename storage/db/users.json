@@ -2,10 +2,11 @@
   {
     "id": 1,
     "accessToken": "tokenaro-M9KBkenjmaSa0wmOV0CkuU3oZmX2xcLxQpyeRngR",
+    "username": "Comical",
     "name": "Comical",
     "hasPassword": true,
     "password": "iPro123",
-    "role": 6
+    "role": 1
   },
   {
     "id": 2,
@@ -13,7 +14,7 @@
     "name": "Figaro",
     "hasPassword": true,
     "password": "123456",
-    "role": 6
+    "role": 1
   },
   {
     "id": 3,
@@ -21,6 +22,15 @@
     "name": "TheKing78",
     "hasPassword": true,
     "password": "123456",
-    "role": 6
+    "role": 1
+  },
+  {
+    "id": 4,
+    "accessToken": "BaseTokenaro:{0)P.h7=|*cs`[wTweY,1;BF[d)vkF|tC-jq1k:}",
+    "username": "newuser",
+    "name": "New User",
+    "hasPassword": true,
+    "password": "password123",
+    "role": 1
   }
 ]

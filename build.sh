@@ -19,6 +19,8 @@ if [ "$choice" == "1" ]; then
 elif [ "$choice" == "2" ]; then
     echo "Installing depencies..."
     $build
+    pip install cryptography
+    pip install requests
 else
     echo "Invalid option"
 fi

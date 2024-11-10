@@ -20,6 +20,8 @@ if "%choice%"=="1" (
 ) else if "%choice%"=="2" (
     echo Installing depencies...
     %build%
+    pip install cryptography
+    pip install requests
 ) else (
     echo Invalid option
 )

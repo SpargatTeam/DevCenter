@@ -4,10 +4,10 @@ const fs = require('fs');
 const path = require('path');
 const { customLog } = require('./logger.js');
 require('dotenv').config();
+const routers = require('./app/api/router.js');
 const app = express();
 const whitelist = JSON.parse(fs.readFileSync('storage/db/whitelist.json', 'utf-8'));
 const isPublic = process.env.WEB_PUBLIC === '1';
-
 const checkWhitelist = (req, res, next) => {
     if (isPublic) {
         next();
@@ -27,7 +27,8 @@ const checkWhitelist = (req, res, next) => {
 };
 
 app.use(checkWhitelist);
-
+app.use(express.json());
+app.use('/api/v1/', routers);
 app.use((req, res) => {
     customLog(`404 Not Found: ${req.originalUrl}`);
     const index = path.join(__dirname, 'app', 'pages', '404.html');
