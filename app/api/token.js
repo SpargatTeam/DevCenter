@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-
 function generateAccessToken() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_=+[]{})(*&^%$#@!;:/?.><,|~`';
     let token = 'BaseTokenaro:';
@@ -9,5 +8,4 @@ function generateAccessToken() {
     }
     return token;
 }
-
 module.exports = generateAccessToken;

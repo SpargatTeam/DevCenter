@@ -12,27 +12,32 @@ const readUsers = () => {
 const writeUsers = (users) => {
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 };
-const registerUserLogic = (req, res) => {
-    const { username, name, password } = req.body;
-    if (!username || !name || !password) {
+const registerUser = (req, res) => {
+    const { username, email, name, password } = req.body; 
+    if (!username || !email || !name || !password) {
         return res.status(400).send('All fields are required');
     }
     const users = readUsers();
-    const existingUser = users.find((u) => u.username === username);
-    if (existingUser) {
+    const existingUser_Email = users.find((u) => u.email === email);
+    const existingUser_Username = users.find((u) => u.username === username); 
+    if (existingUser_Email) {
+        return res.status(409).send('Email already exists');
+    }
+    if (existingUser_Username) {
         return res.status(409).send('Username already exists');
     }
-    const newUser = {
+    const newUser  = {
         id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
         accessToken: generateAccessToken(),
+        email,
         username,
         name,
         hasPassword: true,
         password,
         role: 1
     };
-    users.push(newUser);
+    users.push(newUser );
     writeUsers(users);
-    return res.status(201).json({ message: 'User registered successfully', accessToken: newUser.accessToken });
+    return res.status(201).json({ message: 'User  registered successfully', accessToken: newUser .accessToken });
 };
-module.exports = { registerUserLogic };
+module.exports = { registerUser };

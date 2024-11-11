@@ -2,7 +2,7 @@ import requests
 
 url = 'http://localhost:80/api/v1/login' 
 login_data = {
-    'username': 'newuser',
+    'email': 'email@e.mail',
     'password': 'password123'
 }
 response = requests.post(url, json=login_data)

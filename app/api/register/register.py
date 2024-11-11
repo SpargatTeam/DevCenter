@@ -2,6 +2,7 @@ import requests
 
 url = 'http://localhost:80/api/v1/register'
 register_data = {
+    "email": "email@e.mail",
     'username': 'newuser',
     'name': 'New User',
     'password': 'password123'
