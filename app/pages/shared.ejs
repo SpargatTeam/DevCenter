@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="http://localhost/assets/img/DevCenterLogo.png">
-    <title>404 Not Found <%= location %>
+    <title>Shared files: <%= location %>
     </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%- include('style/light') %>
@@ -13,9 +12,12 @@
 
 <body>
     <div class="middle">
-        <h1>404 Not Found</h1>
-        <h2>Not found <%= location %>
-        </h2>
+        <div>
+            <h1>Shared files:</h1>
+            <ul class="file-list">
+                <%= files %>
+            </ul>
+        </div>
     </div>
 </body>
 

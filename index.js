@@ -34,6 +34,16 @@ app.use('/api/v1/', routers);
 app.get('/', (req, res) => {
     res.render('index');
 });
+app.get('/login/', (req, res) => {
+    res.render('login');
+});
+if (process.env.API_REGISTER === '1') {
+    app.get('/register/', (req, res) => {
+        res.render('register');
+    });
+} else {
+    console.log('Register route is disabled because API_REGISTER is not set to 1');
+}
 app.use((req, res) => {
     customLog(`404 Not Found: ${req.originalUrl}`);
     res.status(404).render('404', { location: req.originalUrl });
