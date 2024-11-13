@@ -1,5 +1,4 @@
 const express = require('express');
-const mustache = require('mustache');
 const fs = require('fs');
 const path = require('path');
 const { customLog } = require('./logger.js');
@@ -37,16 +36,7 @@ app.get('/', (req, res) => {
 });
 app.use((req, res) => {
     customLog(`404 Not Found: ${req.originalUrl}`);
-    const index = path.join(__dirname, 'app', 'pages', '404.html');
-    fs.readFile(index, 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(404).send('404 Not Found');
-        } else {
-            const rendered = mustache.render(data, { location: req.originalUrl });
-            res.status(404).send(rendered);
-        }
-    });
+    res.status(404).render('404', { location: req.originalUrl });
 });
 const PORT = process.env.WEB_PORT;
 app.listen(PORT, () => {

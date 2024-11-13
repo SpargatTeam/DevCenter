@@ -13,7 +13,6 @@
     "axios": "latest",
     "https": "latest",
     "dotenv": "latest",
-    "mustache": "latest",
     "ejs": "latest"
   }
 }
