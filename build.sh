@@ -1,7 +1,7 @@
 #!/bin/bash
 
 project_name="DevCenter"
-run="node index.js"
+run="npm run build"
 build="npm install"
 
 echo "============================================="
@@ -20,7 +20,6 @@ elif [ "$choice" == "2" ]; then
     echo "Installing depencies..."
     $build
     pip install cryptography
-    pip install requests
 else
     echo "Invalid option"
 fi

@@ -25,12 +25,16 @@ const checkWhitelist = (req, res, next) => {
         }
     }
 };
-
 app.use(checkWhitelist);
 app.use(express.json());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'app/pages'));
 app.use('/shared/', express.static(path.join(__dirname, 'storage', 'static', 'storage')));
 app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
 app.use('/api/v1/', routers);
+app.get('/', (req, res) => {
+    res.render('index');
+});
 app.use((req, res) => {
     customLog(`404 Not Found: ${req.originalUrl}`);
     const index = path.join(__dirname, 'app', 'pages', '404.html');
@@ -44,7 +48,6 @@ app.use((req, res) => {
         }
     });
 });
-
 const PORT = process.env.WEB_PORT;
 app.listen(PORT, () => {
     customLog(`HTTP server is running on port ${PORT}`);

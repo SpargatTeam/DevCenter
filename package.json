@@ -6,13 +6,14 @@
   "description": "DevCenter",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "build": "node index.js"
   },
   "dependencies": {
     "express": "latest",
     "axios": "latest",
     "https": "latest",
     "dotenv": "latest",
-    "mustache": "latest"
+    "mustache": "latest",
+    "ejs": "latest"
   }
 }

@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 set "project_name=DevCenter"
-set "run=node index.js"
+set "run=npm run build"
 set "build=npm install"
 
 echo =============================================
@@ -21,7 +21,6 @@ if "%choice%"=="1" (
     echo Installing depencies...
     %build%
     pip install cryptography
-    pip install requests
 ) else (
     echo Invalid option
 )
