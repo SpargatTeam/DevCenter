@@ -11,13 +11,13 @@
     <div class="container">
         <div class="box form-box">
             <header>Login</header>
-            <form>
+            <form id="loginForm">
                 <div class="field input">
-                    <label htmlFor="email">Email</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" name="email" required />
                 </div>
                 <div class="field input">
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" name="password" required />
                 </div>
                 <div class="field">
@@ -26,6 +26,29 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const response = await fetch('/api/v1/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+            if (response.ok) {
+                const data = await response.json();
+                alert(`Login successful! Access Token: ${data.accessToken}`);
+            } else if (response.status === 401) {
+                alert('Unauthorized: Invalid username or password.');
+            } else {
+                alert(`Unexpected error: ${response.status}`);
+            }
+        });
+    </script>
 </body>
 
 </html>

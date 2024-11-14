@@ -11,14 +11,18 @@
     <div class="container">
         <div class="box form-box">
             <header>Register</header>
-            <form>
+            <form id="registerForm">
                 <div class="field input">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required />
                 </div>
                 <div class="field input">
-                    <label for="nickName">Name</label>
-                    <input type="text" id="nickName" name="nickName" required />
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div class="field input">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
                 </div>
                 <div class="field input">
                     <label for="password">Password</label>
@@ -30,6 +34,39 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const registerData = {
+                email: email,
+                username: username,
+                name: name,
+                password: password
+            };
+            const response = await fetch('/api/v1/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(registerData)
+            });
+            if (response.ok) {
+                const data = await response.json();
+                alert(`Registration successful! Access Token: ${data.accessToken}`);
+            } else if (response.status === 400) {
+                alert('Bad Request: All fields are required.');
+            } else if (response.status === 409) {
+                alert('Conflict: Username already exists.');
+            } else {
+                alert(`Unexpected error: ${response.status} - ${await response.text()}`);
+            }
+        });
+    </script>
 </body>
 
 </html>
