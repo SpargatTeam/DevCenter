@@ -11,7 +11,7 @@ const readUsers = () => {
 };
 const conectUser = (req, res) => {
     const { id, accessToken } = req.body;
-    if (!id || !password) {
+    if (!id || !accessToken) {
         return res.status(400).send('id and accessToken are required');
     }
     const users = readUsers();

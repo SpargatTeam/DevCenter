@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const { customLog } = require('./logger.js');
+const os = require('os');
 require('dotenv').config();
 const routers = require('./app/api/router.js');
 const app = express();
@@ -49,7 +50,20 @@ app.use((req, res) => {
     res.status(404).render('404', { location: req.originalUrl });
 });
 const PORT = process.env.WEB_PORT;
-app.listen(PORT, () => {
+const getIPAddress = () => {
+    const interfaces = os.networkInterfaces();
+    for (let iface in interfaces) {
+        for (let alias of interfaces[iface]) {
+            if (alias.family === 'IPv4' && !alias.internal) {
+                return alias.address;
+            }
+        }
+    }
+    return 'localhost';
+};
+app.listen(PORT, '0.0.0.0', () => {
+    const ipAddress = getIPAddress();
     customLog(`HTTP server is running on port ${PORT}`);
-    customLog(`http://localhost:${PORT}`);
+    customLog(`Accessible on localhost at http://localhost:${PORT}`);
+    customLog(`Accessible on network at http://${ipAddress}:${PORT}`);
 });

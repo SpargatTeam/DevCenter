@@ -19,7 +19,9 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     });
     if (response.ok) {
         const data = await response.json();
-        alert(`Registration successful! Access Token: ${data.accessToken}`);
+        localStorage.setItem('id', data.id);
+        localStorage.setItem('accessToken', data.accessToken);
+        window.location.href = '/';
     } else if (response.status === 400) {
         alert('Bad Request: All fields are required.');
     } else if (response.status === 409) {
