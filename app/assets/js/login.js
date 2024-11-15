@@ -2,6 +2,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     event.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    
     const response = await fetch('/api/v1/login', {
         method: 'POST',
         headers: {
@@ -9,8 +10,11 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         },
         body: JSON.stringify({ email, password })
     });
+
     if (response.ok) {
         const data = await response.json();
+        localStorage.setItem('userId', data.id);
+        localStorage.setItem('accessToken', data.accessToken);
         alert(`Login successful! Access Token: ${data.accessToken}`);
     } else if (response.status === 401) {
         alert('Unauthorized: Invalid username or password.');

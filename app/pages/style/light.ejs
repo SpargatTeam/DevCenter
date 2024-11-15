@@ -1,6 +1,10 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+    :root {
+        --accent: rgba(250, 142, 0, 0.808);
+    }
+
     * {
         padding: 0;
         margin: 0;
@@ -10,6 +14,17 @@
 
     body {
         background: #e4e9f7;
+    }
+
+    h1,
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        margin: 10px 0;
+    }
+
+    ::selection {
+        background: var(--accent);
+        color: white;
     }
 
     .container {
@@ -59,7 +74,7 @@
 
     .btn {
         height: 35px;
-        background: rgba(250, 142, 0, 0.808);
+        background: var(--accent);
         border: 0;
         border-radius: 5px;
         color: #fff;
@@ -81,12 +96,6 @@
         height: 100vh;
         text-align: center;
         flex-direction: column;
-    }
-
-    h1,
-    h2 {
-        font-family: 'Roboto', sans-serif;
-        margin: 10px 0;
     }
 
     .file-list {
