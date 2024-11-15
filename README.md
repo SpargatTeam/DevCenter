@@ -12,6 +12,10 @@
 
 ### We want help small teams to became great and can share there codes better
 
+## Help us
+
+### You can help us contributing, read it and try help this project if you want
+
 ## What it have?
 
 - pip center
