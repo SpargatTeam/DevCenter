@@ -10,14 +10,12 @@ const logToFile = (message) => {
             logMessage = `\n${logMessage}`;
         }
     }
-
     fs.appendFileSync(logFilePath, logMessage);
 };
 const customLog = (message) => {
     console.log(message);
     logToFile(message);
 };
-
 module.exports = {
     customLog
 };

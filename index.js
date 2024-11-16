@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { customLog } = require('./logger.js');
+const { customLog } = require('./app/func/logger.js');
 const os = require('os');
 require('dotenv').config();
 const routers = require('./app/api/router.js');

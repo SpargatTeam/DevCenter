@@ -8,28 +8,26 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="box form-box">
-            <header>Register</header>
+    <div class="box" style="width: 500px; height: 400;">
+        <div>
+            <h1>Register</h1>
+            <br>
             <form id="registerForm">
-                <div class="field input">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required />
+                <div>
+                    <input class="input" type="email" id="email" name="email" required placeholder="Email" />
                 </div>
-                <div class="field input">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required />
+                <br>
+                <div>
+                    <input class="input" type="text" id="name" name="name" required placeholder="Name" />
                 </div>
-                <div class="field input">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required />
+                <br>
+                <div>
+                    <input class="input" type="password" id="password" name="password" required
+                        placeholder="Password" />
                 </div>
-                <div class="field input">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required />
-                </div>
-                <div class="field">
-                    <button class="btn" type="submit">Register</button>
+                <br>
+                <div>
+                    <button class="button" type="submit">Register</button>
                 </div>
             </form>
         </div>

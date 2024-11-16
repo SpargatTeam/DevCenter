@@ -1,0 +1,32 @@
+2024-11-16T14:33:05.749Z - HTTP server is running on port 80
+2024-11-16T14:33:05.753Z - Accessible on localhost at http://localhost:80
+2024-11-16T14:33:05.760Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T14:33:05.762Z - or https://192.168.100.3:80
+2024-11-16T14:35:55.099Z - 404 Not Found: /register/a
+2024-11-16T14:36:53.213Z - 404 Not Found: /register/a
+2024-11-16T14:37:47.534Z - 404 Not Found: /register/a
+2024-11-16T14:39:36.252Z - 404 Not Found: /register/a
+2024-11-16T14:39:55.218Z - 404 Not Found: /register/a
+2024-11-16T14:40:18.528Z - 404 Not Found: /register/a
+2024-11-16T14:40:20.308Z - 404 Not Found: /register/a
+2024-11-16T14:40:59.378Z - 404 Not Found: /register/a
+2024-11-16T14:41:15.285Z - 404 Not Found: /register/a
+2024-11-16T14:41:53.994Z - 404 Not Found: /register/a
+2024-11-16T14:43:00.776Z - 404 Not Found: /register/a
+2024-11-16T14:43:01.637Z - 404 Not Found: /register/a
+2024-11-16T14:43:01.883Z - 404 Not Found: /register/a
+2024-11-16T14:43:02.099Z - 404 Not Found: /register/a
+2024-11-16T14:43:02.314Z - 404 Not Found: /register/a
+2024-11-16T14:46:24.082Z - 404 Not Found: /register/a
+2024-11-16T14:46:53.294Z - 404 Not Found: /register/a
+2024-11-16T14:47:15.199Z - 404 Not Found: /register/a
+2024-11-16T14:47:15.780Z - 404 Not Found: /register/a
+2024-11-16T14:47:16.023Z - 404 Not Found: /register/a
+2024-11-16T14:47:16.215Z - 404 Not Found: /register/a
+2024-11-16T14:47:54.387Z - 404 Not Found: /register/a
+2024-11-16T14:48:22.544Z - 404 Not Found: /register/a
+2024-11-16T14:48:54.644Z - 404 Not Found: /register/a
+2024-11-16T14:49:28.044Z - 404 Not Found: /register/a
+2024-11-16T14:49:35.135Z - 404 Not Found: /register/a
+2024-11-16T14:49:55.347Z - 404 Not Found: /register/a
+2024-11-16T14:50:02.852Z - 404 Not Found: /register/a

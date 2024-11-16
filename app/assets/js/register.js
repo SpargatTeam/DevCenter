@@ -1,12 +1,12 @@
 document.getElementById('registerForm').addEventListener('submit', async function (event) {
     event.preventDefault();
     const email = document.getElementById('email').value;
-    const username = document.getElementById('username').value;
+    const username = document.getElementById('name').value;
     const name = document.getElementById('name').value;
     const password = document.getElementById('password').value;
     const registerData = {
         email: email,
-        username: username,
+        username: name,
         name: name,
         password: password
     };
