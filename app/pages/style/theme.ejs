@@ -1,0 +1,10 @@
+<% 
+    let theme = 1; 
+    let initialTheme;
+    if (theme === 0) {
+        initialTheme = 'light';  
+    } else {
+        initialTheme = 'dark';
+    }
+%>
+<%- include(initialTheme) %> 

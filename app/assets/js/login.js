@@ -11,8 +11,8 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     });
     if (response.ok) {
         const data = await response.json();
-        localStorage.setItem('id', data.id);
-        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('email', document.getElementById('email').value);
+        localStorage.setItem('password', document.getElementById('password').value);
         window.location.href = '/';
     } else if (response.status === 401) {
         alert('Unauthorized: Invalid username or password.');

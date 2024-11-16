@@ -4,10 +4,11 @@
         --theme: white;
         --theme-ui: #fff8f4;
         --text: #000;
+        --text-selection: white;
     }
 
     body {
-        background: var(--theme--ui);
+        background-color: var(--theme-ui);
     }
 
     h1,
@@ -23,7 +24,7 @@
 
     ::selection {
         background: var(--accent);
-        color: var(--theme);
+        color: var(--text-selection);
     }
 
     .box {

@@ -4,31 +4,11 @@
 <head>
     <link rel="icon" type="image/png" href="/assets/img/DevCenterLogo.png">
     <title>Login</title>
-    <%- include('style/light') %>
+    <%- include('style/theme') %>
 </head>
 
 <body>
-    <div class="box" style="width: 500px; height: 400;">
-        <div>
-            <h1>Login</h1>
-            <br>
-            <form id="loginForm">
-                <div>
-                    <input class="input" type="email" id="email" name="email" required placeholder="Email" />
-                </div>
-                <br>
-                <div>
-                    <input class="input" type="password" id="password" name="password" required
-                        placeholder="Password" />
-                </div>
-                <br>
-                <div>
-                    <button class="button" type="submit">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
+    <%- include('fragment/login') %>
     <script src="../assets/js/login.js"></script>
 </body>
 

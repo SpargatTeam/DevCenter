@@ -39,3 +39,5 @@
 - a few functions
 
 ## For setup and use it read the .md files from docs
+
+## Patches: read PATCHES.md

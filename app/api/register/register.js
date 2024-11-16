@@ -34,6 +34,7 @@ const registerUser = (req, res) => {
         name,
         hasPassword: true,
         password,
+        theme: 1,
         role: 1
     };
     users.push(newUser );

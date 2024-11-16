@@ -30,3 +30,40 @@
 2024-11-16T14:49:35.135Z - 404 Not Found: /register/a
 2024-11-16T14:49:55.347Z - 404 Not Found: /register/a
 2024-11-16T14:50:02.852Z - 404 Not Found: /register/a
+2024-11-16T19:39:54.486Z - HTTP server is running on port 80
+2024-11-16T19:39:54.506Z - Accessible on localhost at http://localhost:80
+2024-11-16T19:39:54.704Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T19:39:54.707Z - or https://192.168.100.3:80
+2024-11-16T20:33:03.377Z - 404 Not Found: /favicon.ico
+2024-11-16T20:37:48.112Z - HTTP server is running on port 80
+2024-11-16T20:37:48.118Z - Accessible on localhost at http://localhost:80
+2024-11-16T20:37:48.120Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T20:37:48.122Z - or https://192.168.100.3:80
+2024-11-16T20:43:20.840Z - HTTP server is running on port 80
+2024-11-16T20:43:20.845Z - Accessible on localhost at http://localhost:80
+2024-11-16T20:43:20.850Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T20:43:20.853Z - or https://192.168.100.3:80
+2024-11-16T20:44:54.602Z - HTTP server is running on port 80
+2024-11-16T20:44:54.608Z - Accessible on localhost at http://localhost:80
+2024-11-16T20:44:54.611Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T20:44:54.616Z - or https://192.168.100.3:80
+2024-11-16T20:46:50.199Z - HTTP server is running on port 80
+2024-11-16T20:46:50.207Z - Accessible on localhost at http://localhost:80
+2024-11-16T20:46:50.210Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T20:46:50.211Z - or https://192.168.100.3:80
+2024-11-16T20:48:51.951Z - HTTP server is running on port 80
+2024-11-16T20:48:51.958Z - Accessible on localhost at http://localhost:80
+2024-11-16T20:48:51.961Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T20:48:51.968Z - or https://192.168.100.3:80
+2024-11-16T20:54:09.136Z - HTTP server is running on port 80
+2024-11-16T20:54:09.140Z - Accessible on localhost at http://localhost:80
+2024-11-16T20:54:09.142Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T20:54:09.144Z - or https://192.168.100.3:80
+2024-11-16T21:37:01.282Z - HTTP server is running on port 80
+2024-11-16T21:37:01.288Z - Accessible on localhost at http://localhost:80
+2024-11-16T21:37:01.290Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T21:37:01.291Z - or https://192.168.100.3:80
+2024-11-16T21:50:13.648Z - HTTP server is running on port 80
+2024-11-16T21:50:13.655Z - Accessible on localhost at http://localhost:80
+2024-11-16T21:50:13.659Z - Accessible on network at http://192.168.100.3:80
+2024-11-16T21:50:13.669Z - or https://192.168.100.3:80

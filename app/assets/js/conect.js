@@ -1,40 +1,38 @@
 window.addEventListener('load', async function () {
-    const id = localStorage.getItem('id');
-    const accessToken = localStorage.getItem('accessToken');
-    if (!id || !accessToken) {
-        alert('Missing id or access token. Please register.');
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+    if (!email || !password) {
+        alert('Missing ID or access token. Please register.');
         window.location.href = '/register/';
         return;
     }
     try {
-        const response = await fetch('/api/v1/conect', {
+        const response = await fetch('/api/v1/login', { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ id, accessToken })
+            body: JSON.stringify({ email, password })
         });
-        if (response.ok) {
+        if (response.ok || response.status === 200 || response.status === 304) {
             const data = await response.json();
-            localStorage.setItem('id', data.id);
-            localStorage.setItem('accessToken', data.accessToken);
-            localStorage.setItem('email', data.email);
-            localStorage.setItem('username', data.username);
-            localStorage.setItem('name', data.name);
+            console.log('Response data:', data);
+            localStorage.setItem('theme', data.theme);
         } else {
-            clearLocalStorage();
+            clearLocalStorage()
+            const errorText = await response.text();
+            console.error('Server error:', errorText);
+            alert('Authentication failed. Redirecting to registration.');
             window.location.href = '/register/';
         }
     } catch (error) {
+        clearLocalStorage()
         console.error('Error during fetch:', error);
-        clearLocalStorage();
+        alert('Network error occurred. Please try again later.');
         window.location.href = '/register/';
     }
 });
 function clearLocalStorage() {
-    localStorage.removeItem('id');
-    localStorage.removeItem('accessToken');
     localStorage.removeItem('email');
-    localStorage.removeItem('username');
-    localStorage.removeItem('name');
+    localStorage.removeItem('password');
 }
