@@ -8,6 +8,11 @@ const routers = require('./app/api/router.js');
 const app = express();
 const whitelist = JSON.parse(fs.readFileSync('storage/db/whitelist.json', 'utf-8'));
 const isPublic = process.env.WEB_PUBLIC === '1';
+const https = require('https');
+const sslOptions = {
+    key: fs.readFileSync(path.join(__dirname, 'cert/server.key')), 
+    cert: fs.readFileSync(path.join(__dirname, 'cert/server.cert')),
+};
 const checkWhitelist = (req, res, next) => {
     if (isPublic) {
         next();
@@ -61,9 +66,10 @@ const getIPAddress = () => {
     }
     return 'localhost';
 };
-app.listen(PORT, '0.0.0.0', () => {
+https.createServer(sslOptions, app).listen(PORT, '0.0.0.0', () => {
     const ipAddress = getIPAddress();
     customLog(`HTTP server is running on port ${PORT}`);
     customLog(`Accessible on localhost at http://localhost:${PORT}`);
     customLog(`Accessible on network at http://${ipAddress}:${PORT}`);
+    customLog(`or https://${ipAddress}:${PORT}`);
 });
