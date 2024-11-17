@@ -4,20 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shared files: <%= location %>
+    <title>Shared files - DevCenter: <%= location %>
     </title>
     <%- include('style/theme') %>
 </head>
 
 <body>
-    <div class="middle">
-        <div>
-            <h1>Shared files:</h1>
-            <ul class="file-list">
-                <%= files %>
-            </ul>
-        </div>
-    </div>
+    <%- include('fragment/files') %>
 </body>
 
 </html>

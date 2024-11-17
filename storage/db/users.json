@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": 1,
+    "accessToken": "BaseTokenaro:kxtXUrrh0rI3V3MY69dCbGkUgb{qDcqU(X-+JpR-",
+    "email": "e@e.e",
+    "username": "e",
+    "name": "e",
+    "hasPassword": true,
+    "password": "123456",
+    "theme": 1,
+    "role": 1
+  }
+]

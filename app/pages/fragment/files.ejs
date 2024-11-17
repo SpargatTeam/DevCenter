@@ -1,0 +1,18 @@
+<h1>Shared Files - Location: <%= location %></h1>
+
+<h2>Directories</h2>
+<ul>
+    <% directories.forEach(directory => { %>
+        <li>
+            <a href="<%= directory.url %>/"><%= directory.name %></a>
+        </li>
+    <% }); %>
+</ul>
+<h2>Files</h2>
+<ul>
+    <% files.forEach(file => { %>
+        <li>
+            <a href="<%= file.url %>"><%= file.name %></a> 
+        </li>
+    <% }); %>
+</ul>

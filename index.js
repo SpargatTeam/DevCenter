@@ -34,13 +34,54 @@ app.use(checkWhitelist);
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'app/pages'));
-app.use('/shared/', express.static(path.join(__dirname, 'storage', 'static', 'storage')));
+app.use('/shared', express.static(path.join(__dirname, 'storage', 'static', 'storage')));
+
+// Route to list files and directories and handle file download under /shared/*
+app.get('/shared/*', (req, res) => {
+    const relativePath = decodeURIComponent(req.params[0]); // Get the relative path from URL
+    const directoryPath = path.join(__dirname, 'storage', 'static', 'storage', relativePath);
+
+    fs.stat(directoryPath, (err, stats) => {
+        if (err) {
+            return res.status(404).send('File or directory not found');
+        }
+        if (stats.isDirectory()) {
+            fs.readdir(directoryPath, (err, files) => {
+                if (err) {
+                    return res.status(500).send('Error reading directory');
+                }
+                const directories = [];
+                const fileList = [];
+                files.forEach(file => {
+                    const fullPath = path.join(directoryPath, file);
+                    const stats = fs.statSync(fullPath);
+                    const fileInfo = {
+                        name: file,
+                        isDirectory: stats.isDirectory(),
+                        url: path.join(req.originalUrl, file) 
+                    };
+                    if (stats.isDirectory()) {
+                        directories.push(fileInfo); 
+                    } else {
+                        fileList.push(fileInfo); 
+                    }
+                });
+                res.render('shared', {
+                    directories: directories,
+                    files: fileList,
+                    location: req.originalUrl.replace('/shared', '') 
+                });
+            });
+        } else {
+            res.download(directoryPath); 
+        }
+    });
+});
 app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
 app.use('/api/v1/', routers);
 app.get('/', (req, res) => {
     res.render('index');
 });
-
 app.get('/login/', (req, res) => {
     res.render('login');
 });

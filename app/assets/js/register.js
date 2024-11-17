@@ -19,8 +19,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     });
     if (response.ok) {
         const data = await response.json();
-        localStorage.setItem('email', data.email);
-        localStorage.setItem('password', data.password);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
         window.location.href = '/';
     } else if (response.status === 400) {
         alert('Bad Request: All fields are required.');

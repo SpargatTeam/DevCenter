@@ -11,6 +11,7 @@ echo "2. Install (depencies)"
 read -p "Run option: " choice
 if [ "$choice" == "1" ]; then
     echo "Running DevCenter..."
+    which npm
     $run
 elif [ "$choice" == "2" ]; then
     echo "Installing depencies..."
