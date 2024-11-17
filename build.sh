@@ -1,6 +1,6 @@
 #!/bin/bash
 project_name="DevCenter"
-run="npm run build"
+run="sudo env "PATH=$PATH:/home/comical/.nvm/versions/node/v22.11.0/bin" npm run build"
 build="npm install"
 echo "============================================="
 echo "Project: $project_name"
