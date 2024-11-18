@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const logToFile = (message) => {
-    const logFilePath = path.join(__dirname, 'server.log');
+    const logFilePath = path.join(process.cwd(), 'server.log');
     const timestamp = new Date().toISOString();
     let logMessage = `${timestamp} - ${message}\n`;
     if (fs.existsSync(logFilePath)) {
