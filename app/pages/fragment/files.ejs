@@ -1,18 +1,23 @@
-<h1>Shared Files - Location: <%= location %></h1>
+<h1>Directory: <%= location || '/' %>
+</h1>
+<ul>
+    <% if (directories.length===0 && files.length===0) { %>
+        <li>No files or directories found</li>
+        <% } %>
 
-<h2>Directories</h2>
-<ul>
-    <% directories.forEach(directory => { %>
-        <li>
-            <a href="<%= directory.url %>/"><%= directory.name %></a>
-        </li>
-    <% }); %>
-</ul>
-<h2>Files</h2>
-<ul>
-    <% files.forEach(file => { %>
-        <li>
-            <a href="<%= file.url %>"><%= file.name %></a> 
-        </li>
-    <% }); %>
+            <% directories.forEach(dir=> { %>
+                <li>
+                    📁 <a href="<%= dir.url %>">
+                        <%= dir.name %>
+                    </a>
+                </li>
+                <% }); %>
+
+                    <% files.forEach(file=> { %>
+                        <li>
+                            📄 <a href="<%= file.url %>" download>
+                                <%= file.name %>
+                            </a> (Download)
+                        </li>
+                        <% }); %>
 </ul>
