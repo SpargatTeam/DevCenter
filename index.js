@@ -35,6 +35,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'app/pages'));
+app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
+app.use('/api/v1/', routers);
+app.get('/', (req, res) => {
+    res.render('index');
+});
 app.get('/shared/*', (req, res) => {
     const relativePath = decodeURIComponent(req.params[0]);
     const baseDirectory = path.join(__dirname, 'storage', 'static', 'storage');
@@ -77,11 +82,6 @@ app.get('/shared/*', (req, res) => {
             res.download(requestedPath);
         }
     });
-});
-app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
-app.use('/api/v1/', routers);
-app.get('/', (req, res) => {
-    res.render('index');
 });
 app.get('/login/', (req, res) => {
     res.render('login');
