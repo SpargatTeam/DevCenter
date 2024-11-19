@@ -40,6 +40,9 @@ app.use('/api/v1/', routers);
 app.get('/', (req, res) => {
     res.render('index');
 });
+app.get('/share', (req, res) => {
+    res.redirect('/shared/');
+});
 app.get('/shared/*', (req, res) => {
     const relativePath = decodeURIComponent(req.params[0]);
     const baseDirectory = path.join(__dirname, 'storage', 'static', 'storage');
