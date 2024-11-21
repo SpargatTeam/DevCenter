@@ -1,10 +1,10 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { customLog } = require('./app/func/logger.js');
+const { customLog } = require('./app/core/func/logger.js');
 const os = require('os');
 require('dotenv').config();
-const routers = require('./app/api/router.js');
+const routers = require('./app/core/api/router.js');
 const app = express();
 const whitelist = JSON.parse(fs.readFileSync('storage/db/whitelist.json', 'utf-8'));
 const isPublic = process.env.WEB_PUBLIC === '1';
@@ -34,7 +34,7 @@ app.use(checkWhitelist);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'app/pages'));
+app.set('views', path.join(__dirname, 'app/core/pages'));
 app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
 app.use('/api/v1/', routers);
 app.get('/', (req, res) => {
