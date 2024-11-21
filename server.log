@@ -18,3 +18,7 @@ There gonna be saved Server Logs
 2024-11-19T14:34:59.904Z - Accessible on localhost at http://localhost:80
 2024-11-19T14:34:59.904Z - Accessible on network at http://192.168.100.21:80
 2024-11-19T14:34:59.904Z - or https://192.168.100.21:80
+2024-11-21T14:00:15.698Z - HTTP server is running on port 80
+2024-11-21T14:00:15.699Z - Accessible on localhost at http://localhost:80
+2024-11-21T14:00:15.699Z - Accessible on network at http://192.168.100.21:80
+2024-11-21T14:00:15.699Z - or https://192.168.100.21:80
