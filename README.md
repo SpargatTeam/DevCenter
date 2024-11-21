@@ -8,6 +8,8 @@
   <img src="https://img.shields.io/badge/Support-Patreon-orange.svg" alt="Patreon">
 </a>
 
+## Star the project
+
 ## Why?
 
 ### We want help small teams to became great and can share there codes better
