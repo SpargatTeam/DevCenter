@@ -20,8 +20,10 @@ node_path=$(which node)
 npm_path=$(which npm)
 if [ -z "$node_path" ] || [ -z "$npm_path" ]; then
     echo "Node.js or NPM not found. Installing them..."
+    sudo apt install curl
     curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
     sudo apt-get install -y nodejs
+    $build
     node_path=$(which node)
     npm_path=$(which npm)
 fi
@@ -29,12 +31,15 @@ node_version=$("$node_path" -v | tr -d 'v')
 npm_version=$("$npm_path" -v)
 if ! check_version "$node_version" "$required_node_version"; then
     echo "Node.js version ($node_version) is not compatible. Installing the required version..."
+    sudo apt install curl
     curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
     sudo apt-get install -y nodejs
+    $build
 fi
 if ! check_version "$npm_version" "$required_npm_version"; then
     echo "NPM version ($npm_version) is not compatible. Updating..."
     sudo npm install -g npm@"$required_npm_version"
+    $build
 fi
 echo "Adding Node.js to PATH if necessary..."
 node_bin_path=$(dirname "$node_path")
