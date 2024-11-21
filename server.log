@@ -1,24 +1,3 @@
 ################################
 There gonna be saved Server Logs
 ################################
-2024-11-19T14:28:28.890Z - HTTP server is running on port 80
-2024-11-19T14:28:28.891Z - Accessible on localhost at http://localhost:80
-2024-11-19T14:28:28.891Z - Accessible on network at http://192.168.100.21:80
-2024-11-19T14:28:28.891Z - or https://192.168.100.21:80
-2024-11-19T14:28:41.989Z - 404 Not Found: /favicon.ico
-2024-11-19T14:33:12.798Z - HTTP server is running on port 80
-2024-11-19T14:33:12.799Z - Accessible on localhost at http://localhost:80
-2024-11-19T14:33:12.799Z - Accessible on network at http://192.168.100.21:80
-2024-11-19T14:33:12.799Z - or https://192.168.100.21:80
-2024-11-19T14:34:19.251Z - HTTP server is running on port 80
-2024-11-19T14:34:19.251Z - Accessible on localhost at http://localhost:80
-2024-11-19T14:34:19.251Z - Accessible on network at http://192.168.100.21:80
-2024-11-19T14:34:19.252Z - or https://192.168.100.21:80
-2024-11-19T14:34:59.903Z - HTTP server is running on port 80
-2024-11-19T14:34:59.904Z - Accessible on localhost at http://localhost:80
-2024-11-19T14:34:59.904Z - Accessible on network at http://192.168.100.21:80
-2024-11-19T14:34:59.904Z - or https://192.168.100.21:80
-2024-11-21T14:00:15.698Z - HTTP server is running on port 80
-2024-11-21T14:00:15.699Z - Accessible on localhost at http://localhost:80
-2024-11-21T14:00:15.699Z - Accessible on network at http://192.168.100.21:80
-2024-11-21T14:00:15.699Z - or https://192.168.100.21:80
