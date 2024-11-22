@@ -1,3 +1,4 @@
+const os = require('os');
 const getIPAddress = () => {
     const interfaces = os.networkInterfaces();
     for (let iface in interfaces) {
