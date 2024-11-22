@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { customLog } = require('./app/core/func/logger.js');
+const { customLog } = require('./app/core/func/server/logger.js');
 const os = require('os');
 require('dotenv').config();
 const routers = require('./app/core/api/router.js');
@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'app/core/pages'));
 app.use('/assets/', express.static(path.join(__dirname, 'app', 'assets')));
-app.use('/api/v1/', routers);
+app.use('/api/', routers);
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -101,17 +101,7 @@ app.use((req, res) => {
     res.status(404).render('404', { location: req.originalUrl });
 });
 const PORT = process.env.WEB_PORT;
-const getIPAddress = () => {
-    const interfaces = os.networkInterfaces();
-    for (let iface in interfaces) {
-        for (let alias of interfaces[iface]) {
-            if (alias.family === 'IPv4' && !alias.internal) {
-                return alias.address;
-            }
-        }
-    }
-    return 'localhost';
-};
+const { getIPAddress } = require('./app/core/func/server/ip.js');
 https.createServer(sslOptions, app).listen(PORT, '0.0.0.0', () => {
     const ipAddress = getIPAddress();
     customLog(`HTTP server is running on port ${PORT}`);
