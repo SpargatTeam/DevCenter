@@ -1,6 +1,6 @@
 # DevCenter 🏢
 
-## An place where you can share Maven artifacts, create gits and update as an artifact, or create an static server or use it as a pip server and Haxelib server
+## n place where you can share Maven artifacts, create gits and update as an artifact, or create an static server or use it as a pip server and Haxelib server
 
 ### If you want support our project you can star it and buy Normal Tier on Patreon with 2 dollar
 
